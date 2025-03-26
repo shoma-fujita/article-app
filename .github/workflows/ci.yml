@@ -19,3 +19,9 @@ jobs:
         run: |
           npm install -g @lhci/cli@0.14.x
           lhci autorun
+      - name: Format lighthouse score
+        if: always()
+        run: |
+          echo "### Lighthouse Results 🏠" >> $GITHUB_STEP_SUMMARY
+          message=$(grep -o 'https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/[^"]*' $(find .lighthouseci -name "manifest.json") | head -n1)
+          echo "📊 [Lighthouse Report]($message)" >> $GITHUB_STEP_SUMMARY
