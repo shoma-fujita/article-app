@@ -1,21 +1,16 @@
 export default {
   ci: {
     collect: {
-      // Nuxt 3では静的ファイルは.output/publicに生成される
-      staticDistDir: '.output/public',
-      // サーバー起動方式はコメントアウト
-      // startServerCommand: 'npm run start',
+      staticDistDir: './.output/public',
       url: [
         'http://localhost:3000/',
-        // 他に測定したいURLを追加
       ],
-      numberOfRuns: 3, // 各URLに対して実行する回数
+      numberOfRuns: 3,
     },
     upload: {
-      target: 'temporary-public-storage', // または独自のサーバー
+      target: 'temporary-public-storage',
     },
     assert: {
-      preset: 'lighthouse:recommended',
       assertions: {
         // Web Vitalsに関する特定のアサーション
         'first-contentful-paint': ['warn', {maxNumericValue: 2000}],
