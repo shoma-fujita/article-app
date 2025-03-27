@@ -1,10 +1,10 @@
 export default {
   ci: {
     collect: {
-      // 静的サイトの場合
-      // staticDistDir: './dist',
-      // または実行中のサーバーの場合
-      startServerCommand: 'npm run start',
+      // Nuxt 3では静的ファイルは.output/publicに生成される
+      staticDistDir: '.output/public',
+      // サーバー起動方式はコメントアウト
+      // startServerCommand: 'npm run start',
       url: [
         'http://localhost:3000/',
         // 他に測定したいURLを追加
