@@ -1,7 +1,7 @@
 export default {
   ci: {
     collect: {
-      staticDistDir: './.output/public',
+      staticDistDir: '.output/public',
       url: [
         'http://localhost:3000/',
       ],
