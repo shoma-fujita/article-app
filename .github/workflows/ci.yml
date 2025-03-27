@@ -1,9 +1,5 @@
 name: Lighthouse
-on: 
-  push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
+on: push
 
 jobs:
   lighthouse:
