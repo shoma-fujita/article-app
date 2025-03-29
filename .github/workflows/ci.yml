@@ -18,4 +18,6 @@ jobs:
         run: |
           npm install && npm install -g @lhci/cli@0.14.x
           npm run build
+          # 静的ファイルが正しく生成されていることを確認
+          ls -la .output/public || echo "Directory .output/public does not exist"
           lhci autorun
